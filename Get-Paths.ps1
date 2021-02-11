@@ -79,6 +79,8 @@ Function Commit-Path{
 	# Check for new Commit
 	if ($newPath -eq $check){
 		Write-host "New Path successfully Written!"
+	} else {
+		Write-host "Failed to Write new Path!"
 	}
 }
 
@@ -88,6 +90,7 @@ Function Interp-Path-To-Vars {
 		[Parameter(Mandatory=$True,Position=1)][string]$Path
 	)
 	
+	# Pull Parsed Path
 	$CurrentPath = Get-ParsedPath($Path)
 	
 	
